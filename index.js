@@ -93,7 +93,7 @@ module.exports = {
 
       var jira = answers.jira.trim();
 
-      var participants += answers.driver.trim();
+      var participants = answers.driver.trim();
 
       var navigateur = answers.navigateur.trim();
       participants  += navigateur ?  ', ' + answers.navigateur.trim() : '';
