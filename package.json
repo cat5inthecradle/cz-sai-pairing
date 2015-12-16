@@ -10,7 +10,7 @@
   "homepage": "https://github.com:cat5inthecradle/cz-sai-pairing",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/%3Acat5inthecradle/cz-sai-pairing.git"
+    "url": "git+https://github.com/cat5inthecradle/cz-sai-pairing.git"
   },
   "author": "Darin Webb <darinlwebb@gmail.com>",
   "license": "MIT",
