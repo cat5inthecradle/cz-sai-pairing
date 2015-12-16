@@ -1,0 +1,26 @@
+{
+  "name": "cz-sai-pairing",
+  "version": "1.0.0",
+  "description": "Commitizen adapter following the SAI Pairing format.",
+  "main": "index.js",
+  "scripts": {
+    "commit": "git-cz",
+    "test": "echo 'No Testing Set Up!'"
+  },
+  "homepage": "https://github.com:cat5inthecradle/cz-sai-pairing",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com:cat5inthecradle/cz-sai-pairing.git"
+  },
+  "author": "Darin Webb <darinlwebb@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "word-wrap": "^1.0.3"
+  },
+  "devDependencies": {
+    "commitizen": "1.0.5"
+  },
+  "czConfig": {
+    "path": "./"
+  }
+}
