@@ -103,7 +103,7 @@ module.exports = {
 
       var message = wrap(answers.message.trim(), wrapOptions);
 
-      commit(jira + '\n' + participants + ':\n' + message);
+      commit(jira + ' ' + participants + ': ' + message);
     });
   }
 }
