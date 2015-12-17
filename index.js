@@ -1,6 +1,6 @@
 "format cjs";
 
-var wrap = require('word-wrap');
+var branch = require('git-branch');
 
 // This can be any kind of SystemJS compatible module.
 // We use Commonjs here, but ES6 or AMD would do just 
@@ -19,8 +19,6 @@ module.exports = {
   // By default, we'll de-indent your commit
   // template and will keep empty lines.
   prompter: function(cz, commit) {
-
-    console.log('\nLine 1 will be cropped at 100 characters. All other lines will be wrapped after 100 characters.\n');
     
     // Let's ask some questions of the user
     // so that we can populate our commit 
@@ -33,10 +31,11 @@ module.exports = {
       {
         type: 'input',
         name: 'jira',
-        message: 'Enter the Jira ticket for this change (eg. SAIINF-112):\n',
+        message: 'Enter the Jira ticket for this change ('+branch.sync()+'):\n',
         validate: function(input) {
           if (!input) {
-            return 'Must specify issue IDs, otherwise, just use a normal commit message';
+            input = branch.sync();
+            return true;
           } else {
             return true;
           }
@@ -77,19 +76,8 @@ module.exports = {
         }
       }
     ], function(answers) {
-      
-      var maxLineWidth = 100;
 
-      var wrapOptions = {
-        trim: true,
-        newline: '\n',
-        indent:'',
-        width: maxLineWidth
-      };
-
-      // JIRA-123
-      // Driver, Navigator, Backseat:
-      // commit message
+      // JIRA-123 Driver, Navigator, Backseat: commit message
 
       var jira = answers.jira.trim();
 
@@ -101,7 +89,7 @@ module.exports = {
       var backseat  = answers.backseat.trim();
       participants += backseat ? ', ' + answers.backseat.trim() : '';
 
-      var message = wrap(answers.message.trim(), wrapOptions);
+      var message = answers.message.trim();
 
       commit(jira + ' ' + participants + ': ' + message);
     });
