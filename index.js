@@ -32,14 +32,7 @@ module.exports = {
         type: 'input',
         name: 'jira',
         message: 'Enter the Jira ticket for this change ('+branch.sync()+'):\n',
-        validate: function(input) {
-          if (!input) {
-            input = branch.sync();
-            return true;
-          } else {
-            return true;
-          }
-        }
+        default: branch.sync()
       },
       {
         type: 'input',
