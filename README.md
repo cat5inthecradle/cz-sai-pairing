@@ -51,8 +51,8 @@ This just tells Commitizen which adapter we actually want our contributors to us
 
 ## Dependencies
 
-* [word-wrap](https://www.npmjs.com/package/word-wrap)
-
+* [git-branch](https://www.npmjs.com/package/git-branch)
+ 
 Dev Dependencies
 
 * [commitizen](https://github.com/commitizen/cz-cli)
